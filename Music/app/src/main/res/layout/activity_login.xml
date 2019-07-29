@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activity.LoginActivity"
+    android:background="@drawable/voilet_gradient"
+    android:fitsSystemWindows="true">
+
+
+    <RelativeLayout
+        android:layout_marginTop="120dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/linear1">
+
+
+        <EditText
+            android:id="@+id/etUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="#000"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:elevation="10dp"
+            android:background="@android:color/transparent"
+            android:hint="Username"
+            android:textColor="#000"
+            android:drawableLeft="@drawable/users"/>
+
+
+        <EditText
+            android:id="@+id/etPass"
+            android:textColorHint="#000"
+            android:background="@android:color/transparent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:inputType="textPassword"
+            android:layout_below="@+id/etUser"
+            android:hint="Password"
+            android:textColor="#000"
+            android:drawableLeft="@drawable/security"/>
+
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/etPass"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="29dp"
+            android:background="@drawable/mybutton"
+            android:elevation="50dp"
+            android:text="LOGIN"/>
+
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linear1"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        android:id="@+id/linearLayout">
+        <TextView
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="I do not have a username and password details. Click the button below to register "
+            android:layout_marginEnd="20dp"
+            android:textColor="#000"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="20dp"
+            android:textStyle="bold"/>
+
+        <Button
+            android:id="@+id/btnReg"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/linearLayout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="18dp"
+            android:background="@drawable/mybutton"
+            android:elevation="50dp"
+            android:text="Registration"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="19dp"
+        android:layout_marginTop="20dp"
+        app:srcCompat="@drawable/note1" />
+
+</RelativeLayout>

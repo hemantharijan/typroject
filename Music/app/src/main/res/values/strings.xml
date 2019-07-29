@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Música</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="genre">Choose a Genre</string>
+    <string-array name="genre_list">
+        <item>Rock</item>
+        <item>Jazz</item>
+        <item>BollyWood</item>
+        <item>EDM</item>
+        <item>HipHop</item>
+        <item>Trance</item>
+        <item>Drums and Base</item>
+        <item>Electric</item>
+        <item>Fulte</item>
+        <item>GospelMusic</item>
+        <item>Metal</item>
+        <item>Chelo</item>
+
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

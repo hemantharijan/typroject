@@ -1,0 +1,119 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/voilet_gradient">
+
+        <EditText
+            android:id="@+id/Mname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="150dp"
+            android:background="@drawable/mybutton"
+            android:hint="Music Name"
+            android:gravity="center"
+            android:textColor="#fff"
+            android:padding="5dp"
+            android:textColorHint="#000" />
+
+        <EditText
+            android:padding="5dp"
+            android:id="@+id/MArtist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Mname"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:background="@drawable/mybutton"
+            android:hint="Artist Name"
+            android:textColor="#fff"
+            android:textColorHint="#000" />
+
+        <Spinner
+            android:id="@+id/MGenre"
+            android:padding="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/MArtist"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/mybutton"
+            android:entries="@array/genre_list"
+            android:gravity="center"
+            android:prompt="@string/genre">
+
+        </Spinner>
+
+
+        <Button
+            android:id="@+id/Mpicker"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@+id/MGenre"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="31dp"
+            android:background="@drawable/mybutton"
+            android:padding="10dp"
+            android:text="select music" />
+
+
+        <Button
+
+            android:id="@+id/btnuploadmusic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/MGenre"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="100dp"
+            android:text="Upload Musica"
+            android:background="@drawable/mybutton"
+            android:bottomRightRadius="30dp"
+            android:bottomLeftRadius="30dp"
+            android:topLeftRadius="30dp"
+            android:topRightRadius="30dp"
+            />
+
+        <ImageView
+            android:id="@+id/imageView46"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="29dp"
+            android:layout_toEndOf="@+id/Mpicker"
+            app:srcCompat="@drawable/note1" />
+
+        <ImageView
+            android:id="@+id/imageView47"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignEnd="@+id/Mname"
+            android:layout_below="@+id/imageView46"
+            android:layout_marginTop="19dp"
+            app:srcCompat="@drawable/note1" />
+
+        <ImageView
+            android:id="@+id/imageView48"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_above="@+id/imageView47"
+            android:layout_alignEnd="@+id/imageView47"
+            android:layout_marginBottom="17dp"
+            app:srcCompat="@drawable/note1" />
+
+
+    </RelativeLayout>
+
+
+</FrameLayout>

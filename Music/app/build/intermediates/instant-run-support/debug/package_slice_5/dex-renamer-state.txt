@@ -1,0 +1,4 @@
+#Mon Feb 05 11:31:01 IST 2018
+base.0=C\:\\Users\\Hemant\\Desktop\\Musica3\\Music\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\5
+path.0=classes.dex
+renamed.0=classes.dex
