@@ -1,0 +1,114 @@
+-- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
+--
+-- Host: localhost    Database: musica
+-- ------------------------------------------------------
+-- Server version	5.7.9-log
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `genre`
+--
+
+DROP TABLE IF EXISTS `genre`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `genre` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `genre_name` varchar(255) NOT NULL DEFAULT '',
+  `Img_Url` varchar(255) NOT NULL DEFAULT '',
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `genre`
+--
+
+LOCK TABLES `genre` WRITE;
+/*!40000 ALTER TABLE `genre` DISABLE KEYS */;
+INSERT INTO `genre` VALUES (1,'Rock','images/rock.jpg'),(2,'Jazz','images/jazz.jpg'),(3,'BollyWood','images/bollywood.jpg'),(4,'EDM','images/edm.jpg'),(5,'HipHop','images/HipHop.jpg'),(6,'Trance','images/trance.jpg'),(7,'Drum&Base','images/drum&base.jpg'),(8,'Electric','images/Electric.jpg'),(9,'Flute','images/flute.jpg'),(10,'GospelMusic','images/GospelMusic.jpg'),(11,'Metal','images/Metal.jpg'),(12,'Chelo','images/chelo.jpg');
+/*!40000 ALTER TABLE `genre` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `music`
+--
+
+DROP TABLE IF EXISTS `music`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `music` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) DEFAULT NULL,
+  `genre_id` int(11) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `artist_name` varchar(255) DEFAULT NULL,
+  `cover_img_url` varchar(255) DEFAULT NULL,
+  `Music_url` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `user_id` (`user_id`),
+  KEY `genre_id` (`genre_id`),
+  CONSTRAINT `genre_id` FOREIGN KEY (`genre_id`) REFERENCES `genre` (`Id`),
+  CONSTRAINT `user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`User_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `music`
+--
+
+LOCK TABLES `music` WRITE;
+/*!40000 ALTER TABLE `music` DISABLE KEYS */;
+INSERT INTO `music` VALUES (1,2,1,'Tial','Unknown','images/rock.jpg','music/tial.mp3'),(19,2,1,'Believer','Coldplay','images/rock.jpg','music/believer.mp3'),(20,2,1,'summer','Unknown','images/rock.jpg','music/summer.mp3'),(21,2,1,'radioactive','Imagines dragons','images/rock.jpg','music/radioactive.mp3');
+/*!40000 ALTER TABLE `music` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `user`
+--
+
+DROP TABLE IF EXISTS `user`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `user` (
+  `User_ID` int(11) NOT NULL AUTO_INCREMENT,
+  `Name` varchar(20) NOT NULL,
+  `User_Name` varchar(10) NOT NULL,
+  `Password` varchar(10) NOT NULL,
+  `Email_ID` varchar(30) NOT NULL DEFAULT '',
+  PRIMARY KEY (`User_ID`),
+  UNIQUE KEY `User_Name` (`User_Name`),
+  UNIQUE KEY `Email_ID` (`Email_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user`
+--
+
+LOCK TABLES `user` WRITE;
+/*!40000 ALTER TABLE `user` DISABLE KEYS */;
+INSERT INTO `user` VALUES (1,'Arati','Artu','12345','arati.harijan02@gmail.com'),(2,'Hemant Harijan','Hemantax ','98202','hemantharijan92@gmail.com'),(3,'Ajay velhal ','Ajax','248248','ajayvelhal@gmail.com'),(4,'Varun Oak','VarunRocks','Bruno','varunoak@gmail.com'),(5,'Ganesh Vyas','Bryne05','bryne','gvyas@gmail.com'),(6,'Param Iyer','Sab','DeadMan','piyer97@gmail.com'),(7,'Darshana DeshPandey','DVD','Milli','Darshana@gmail.com'),(8,'Eesha Donde','Eeshu','Valik','eeshadonde@gmail.com'),(9,'Tanvi Wagle','Tanvi','Tanvi','tanviwagle@gmail.com'),(10,'SaloniMude','Saloni','789456','mudesaloni@gmail.com'),(11,'Piyusha Zope','Olive','151297','zopepiyusha@gmail.com'),(12,'Vineet Deshmukh','Bravo','Vineet20','vineetdeshmukh@gmail.com'),(13,'Amulya Pai','Amulya','pai97','paiamulya@gmail.com'),(14,'Shubham Kadam','Subkadam','subham','subhamkadam@gmail.com'),(15,'Sakshi Saraf','sakshi21','sakshi','sakshisaraf@gmail.com'),(16,'Prasad Yadav','PrasadY','456123','prasadyadav@gmail.com'),(17,'Swarnima Satam','Swarnima','swarnima','swarnima@gmail.com'),(18,'Sahil Kadam','sahil','789456123','kadamsahil@gamil.com'),(19,'Mansi More','Mansi','Mansi1337','mansimore@gmai.com'),(20,'Omkar Mohite','Omy','omy123','omy09@gmail.com'),(21,'PoojaSawant','pooja','pooja1245','poojasawant@gmail.com'),(22,'Jidnyasa Parab','Jiggi','Luna','JidnyasaParab@gmail.com'),(23,'Anuradha Date','AnuDate','anu123456','anudate@gmail.com'),(24,'Mustufa','Mustufa','mustufa','mustufa@gmail.com');
+/*!40000 ALTER TABLE `user` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2019-10-12 20:21:07
